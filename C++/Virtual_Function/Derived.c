@@ -1,7 +1,7 @@
 #include "Derived.h"
 #include <stdio.h>
 
-static void *derivedVtable[] = {
+const static void *derivedVtable[] = {
     Derivedprint,
     BaseHi
 };

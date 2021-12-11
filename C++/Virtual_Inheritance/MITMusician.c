@@ -10,11 +10,11 @@ struct musicianVtable {
     uint64_t offset;
 };
 
-static struct mitStuVtable mitStuVtable = {
+const static struct mitStuVtable mitStuVtable = {
     offsetof(struct MITMusician, stu)
 };
 
-static struct musicianVtable musicianVtable = {
+const static struct musicianVtable musicianVtable = {
     offsetof(struct MITMusician, stu) + offsetof(struct Student, people)
 };
 
