@@ -1,7 +1,7 @@
 #include "Base.h"
 #include <stdio.h>
 
-static void *baseVtable[] = {
+const static void *baseVtable[] = {
     BasePrint,
     BaseHi
 };

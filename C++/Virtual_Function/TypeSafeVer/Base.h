@@ -25,7 +25,7 @@ struct Vtable {
 };
 
 struct Base {
-    struct Vtable *vptr;
+    const struct Vtable *vptr;
     int x;
 };
 

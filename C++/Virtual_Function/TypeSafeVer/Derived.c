@@ -6,7 +6,7 @@
 //     BaseHi
 // };
 
-static struct Vtable derivedVtable= {
+const static struct Vtable derivedVtable= {
     .print = DerivedPrint,
     .hi = BaseHi
 };
