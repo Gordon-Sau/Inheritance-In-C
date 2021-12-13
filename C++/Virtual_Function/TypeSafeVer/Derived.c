@@ -6,9 +6,12 @@
 //     BaseHi
 // };
 
-const static struct Vtable derivedVtable= {
-    .print = DerivedPrint,
-    .hi = BaseHi
+const static struct DerivedVtable derivedVtable= {
+    .baseVtable = {
+        .hi = BaseHi,
+        .print = DerivedPrint
+    },
+    .bye = DerivedBye
 };
 
 void DerivedPrint(struct Base *b) {
@@ -21,7 +24,7 @@ void DerivedShow(struct Derived *d) {
 }
 
 void DerivedInit(struct Derived *d, int x, int z) {
-    d->base.vptr = &derivedVtable;
+    d->base.vptr = &derivedVtable.baseVtable;
     d->base.x = x;
     d->z = z;
 }

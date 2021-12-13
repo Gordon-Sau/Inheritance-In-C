@@ -11,6 +11,9 @@ class Derived: Base {
     void show() {
         printf("Derived\n");
     }
+    virtual void bye() {
+        printf("bye\n");
+    }
 }
 */
 
@@ -19,6 +22,12 @@ struct Derived {
     int z;
 };
 
+struct DerivedVtable {
+    struct Vtable baseVtable;
+    void (*bye)(struct Derived *);
+};
+
 void DerivedPrint(struct Base *);
 void DerivedShow(struct Derived *);
+void DerivedBye(struct Derived *);
 void DerivedInit(struct Derived *, int, int);
