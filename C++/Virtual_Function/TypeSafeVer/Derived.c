@@ -23,6 +23,22 @@ void DerivedShow(struct Derived *d) {
     printf("Derived\n");
 }
 
+void DerivedBye(struct Derived *d) {
+    printf("bye\n");
+}
+
+void virtualDerivedHi(struct Derived *d) {
+    d->base.vptr->hi(&(d->base));
+}
+
+void virtualDerivedPrint(struct Derived *d) {
+    d->base.vptr->print(&(d->base));
+}
+
+void virtualDerivedBye(struct Derived *d) {
+    ((struct DerivedVtable *)d->base.vptr)->bye(&(d->base));
+}
+
 void DerivedInit(struct Derived *d, int x, int z) {
     d->base.vptr = &derivedVtable.baseVtable;
     d->base.x = x;

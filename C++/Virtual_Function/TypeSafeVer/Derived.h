@@ -31,3 +31,7 @@ void DerivedPrint(struct Base *);
 void DerivedShow(struct Derived *);
 void DerivedBye(struct Derived *);
 void DerivedInit(struct Derived *, int, int);
+
+void virtualDerivedHi(struct Derived *d);
+void virtualDerivedPrint(struct Derived *d);
+void virtualDerivedBye(struct Derived *d);
