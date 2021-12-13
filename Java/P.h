@@ -28,12 +28,6 @@ struct PTableStruct {
     int (*myHash)(void *);
 };
 
-// struct PClass {
-//     const struct ClassBase classBase;
-//     const struct PTableStruct vtable;
-//     const void *itables[3];
-// };
-
 struct PClass {
     const struct ClassBase classBase;
     const struct PTableStruct vtable;
