@@ -3,7 +3,7 @@
 #include "InterafaceId.h"
 #include <stdio.h>
 
-int I1defaultComputeX(void *object) {
+int I1DefaultComputeX(void *object) {
     return 0;
 }
 
