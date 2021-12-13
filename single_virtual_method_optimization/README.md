@@ -1,0 +1,5 @@
+Remove an indirection when the vtable only contains one function.
+Since a vptr and a function pointer have the same size, it does not increase the size.
+Note that this optimization does not work on the c++ like implementation, unless we check whether the pointer is a vptr or a function pointer on runtime (which may be possible as a pointer pionts to the code section and the other points to the data section, but this depends on the memroy layout and it requires one branch which may slow down the program) or we check that there is no subclass that add a virtual method in compile time as such subclass will require a indirection to the vtable to hold more than one pointers.
+This always works on the fat pointer implementation as the vptr is not attached to the object.
+Here I have implemented a c++ like implementation which the subclass does not have any additional virtual methods and a fat pointer implementaion.
